@@ -11,7 +11,7 @@ pipeline {
     stage ('Scan') {
             steps {
                withSonarQubeEnv(installationName: 'sonarserver', credentialsId: 'sonarpost-token') {
-                bat 'mvn clean package sonar:sonar'
+                bat 'mvn --version'
                 }
             }
         }
