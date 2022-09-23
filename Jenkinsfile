@@ -11,7 +11,7 @@ pipeline {
     stage ('Scan') {
             steps {
                withSonarQubeEnv(installationName: 'sonarqubeserver', credentialsId: 'sonartoken') {
-                bat 'mvn --version'
+                bat 'mvn clean package sonar:sonar'
                 }
             }
         }
