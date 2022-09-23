@@ -10,7 +10,7 @@ pipeline {
     }
     stage ('Scan') {
             steps {
-               withSonarQubeEnv(installationName: 'sonarqubeserver', credentialsId: 'sonartoken') {
+               withSonarQubeEnv(installationName: 'sonarserver', credentialsId: 'sonarpost-token') {
                 bat 'mvn clean package sonar:sonar'
                 }
             }
