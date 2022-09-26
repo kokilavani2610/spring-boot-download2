@@ -10,7 +10,7 @@ pipeline {
     }
     stage ('Scan') {
             steps {
-               withSonarQubeEnv(installationName: 'sonarserver', credentialsId: 'sonarpost-token') {
+               withSonarQubeEnv(installationName: 'ProductionSonarQube scanner', credentialsId: 'SonarQubetoken') {
                 bat '''
                 mvn --version
                 mvn clean verify sonar:sonar -Dsonar.login=SonarQubetoken
