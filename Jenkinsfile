@@ -4,7 +4,7 @@ pipeline {
     stage('Print') {
       steps {
         script {
-          echo 'test'          
+          echo 'sonar-branch'          
         }
       }
     }
