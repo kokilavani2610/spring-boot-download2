@@ -10,7 +10,7 @@ pipeline {
     }
     stage ('Scan') {
             steps {
-               withSonarQubeEnv(installationName: 'ProductionSonarQube scanner', credentialsId: 'SonarQubetoken') {
+               withSonarQubeEnv(installationName: 'ProductionSonarQube scanner', credentialsId: 'newsonar') {
                 bat '''                 
                 mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar
                 mvn clean package sonar:sonar
